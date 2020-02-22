@@ -1,0 +1,27 @@
+{
+  "name": "Game-Jam-SPR-2020",
+  "version": "1.0.0",
+  "description": "GameJamSPR2020",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Test complete!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncs2738/GameJamSpring2020.git"
+  },
+  "keywords": [],
+  "author": "Nick Schnering",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ncs2738/GameJamSpring2020.git/issues"
+  },
+  "homepage": "https://github.com/ncs2738/GameJamSpring2020.git#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
