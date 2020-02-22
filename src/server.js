@@ -1,6 +1,5 @@
 const http = require('http');
 const url = require('url');
-const query = require('querystring');
 const responseHandler = require('./responses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
@@ -30,14 +29,13 @@ const urlStruct = {
 const onRequest = (request, response) => {
     const parsedUrl = url.parse(request.url);
     const acceptedTypes = request.headers.accept.split(',');
+
+console.log(urlStruct[parsedUrl.pathname]);
+
     if (urlStruct[parsedUrl.pathname]) 
     {
       urlStruct[parsedUrl.pathname](request, response, acceptedTypes, request.url);
     } 
-    else
-    {
-        urlStruct.notFound(request, response, acceptedTypes);
-    }
   };
   http.createServer(onRequest).listen(port);
   

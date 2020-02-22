@@ -11,34 +11,34 @@ const getResponse = (request, response, statusCode, contentType, content) =>
 
 const AlphaNum = 
 {
-    "Q" : 24,
-    "W" : 24,
-    "E" : 2,
-    "R" : 9,
-    "T" : 7,
-    "Y" : 19,
-    "A" : 14,
-    "S" : 5,
-    "D" : 1,
-    "F" : 11,
-    "G" : 24,
-    "H" : 24,
+    "/Q" : 2,
+    "/W" : 24,
+    "/E" : 7,
+    "/R" : 14,
+    "/T" : 5,
+    "/Y" : 24,
+    "/A" : 11,
+    "/S" : 24,
+    "/D" : 19,
+    "/F" : 24,
+    "/G" : 9,
+    "/H" : 1,
 };
 
 const LetPos = 
 {
-    "Q" : "1, 2, 10, 11",
-    "W" : "1, 2, 10, 11",
-    "E" : 2,
-    "R" : 9,
-    "T" : 7,
-    "Y" : 19,
-    "A" : 14,
-    "S" : 5,
-    "D" : 1,
-    "F" : 11,
-    "G" : "1, 2, 10, 11",
-    "H" : "1, 2, 10, 11",
+    "/Q" : 3,
+    "/W" : "1, 2, 11, 12",
+    "/E" : 5,
+    "/R" : 7,
+    "/T" : 8,
+    "/Y" : "1, 2, 11, 12",
+    "/A" : 10,
+    "/S" : "1, 2, 11, 12",
+    "/D" : 6,
+    "/F" : "1, 2, 11, 12",
+    "/G" : 4,
+    "/H" : 9,
 };
 
 
@@ -49,11 +49,9 @@ const handler = (request, response, acceptedTypes, pathway) =>
         message: '',
     };
 
-    if (acceptedTypes[0] === 'text/xml') 
+    if (acceptedTypes[0] === 'LOCATION') 
     {
         let num = LetPos[pathway];
-        console.log(num);
-
         responseObj.message = num;
 
         let responseXML = '<response>';
@@ -64,11 +62,12 @@ const handler = (request, response, acceptedTypes, pathway) =>
     else
     {
         let num = AlphaNum[pathway];
-        console.log(num);
         responseObj.message = num;
 
-        const message = JSON.stringify(responseObj);
-        getResponse(request, response, 200, 'application/json', message);
+        let responseXML = '<response>';
+        responseXML = `${responseXML} <message>${responseObj.message}</message>`;
+        responseXML = `${responseXML} </response>`;
+        getResponse(request, response, 200, 'text/xml', responseXML);
     }
 };
 
