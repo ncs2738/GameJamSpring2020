@@ -30,8 +30,6 @@ const onRequest = (request, response) => {
     const parsedUrl = url.parse(request.url);
     const acceptedTypes = request.headers.accept.split(',');
 
-console.log(urlStruct[parsedUrl.pathname]);
-
     if (urlStruct[parsedUrl.pathname]) 
     {
       urlStruct[parsedUrl.pathname](request, response, acceptedTypes, request.url);
