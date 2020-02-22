@@ -24,7 +24,7 @@ body
 select, #textSearch
 {
     font-size: 20px;
-    height: 6vh;
+    height: 2vh;
     color:rgb(65, 71, 77);
     background:rgb(252, 252, 252);
     border: 2px black solid;
