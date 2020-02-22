@@ -45,41 +45,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 <script type="text/babel">
 
-const init = () => 
-{
-  const sendButton = document.querySelector("#send");
-  const pageSelect = document.querySelector("#page");
-  const typeSelect = document.querySelector("#type");
-
-  const sendRequest = () => sendAjax(pageSelect.value, typeSelect.value);
-  sendButton.addEventListener('click', sendRequest);
-};
-
-const sendAjax = (url, contentType) => 
-{
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.setRequestHeader ("Accept", contentType);
-  xhr.onload = () => handleResponse(xhr);
-  xhr.send();
-};
-
-const handleResponse = (xhr) => 
-{
-  const type = xhr.getResponseHeader('content-type');
-  const content = document.querySelector("#content"); 
-  if(type === 'application/json') 
-  {
-    content.innerHTML = `<b>${obj.message}</b>`;
-  }
-  else if (type === 'text/xml') 
-  {
-    let message = xhr.responseXML.querySelector('message').textContent
-    content.innerHTML = `<b>${message}</b>`;
-  }
-};
-
-window.onload = init;
+const _0x2185=['click','#hIdEMe','toLowerCase','innerHTML','replace','https://people.rit.edu/~ncs2738/GameJam2020/il-ne-reste-que-le-nom.html','addEventListener','querySelector','xxbigsneakxx','onload','trim','location','#HidEMe','value','#SubmitButton','https://resoudre-lenigme.herokuapp.com/','open','chutconfituredegibiersecret'];(function(_0x51e103,_0x175f6d){const _0x3fdea4=function(_0x4b75cb){while(--_0x4b75cb){_0x51e103['push'](_0x51e103['shift']());}};_0x3fdea4(++_0x175f6d);}(_0x2185,0xe0));const _0x1c4e=function(_0x51e103,_0x175f6d){_0x51e103=_0x51e103-0x0;let _0x3fdea4=_0x2185[_0x51e103];return _0x3fdea4;};const init=()=>{const _0x3e354a=document[_0x1c4e('0x11')](_0x1c4e('0x6'));const _0x3e5d9f=()=>checkPass(username[_0x1c4e('0x5')],pwd[_0x1c4e('0x5')]);_0x3e354a[_0x1c4e('0x10')](_0x1c4e('0xa'),_0x3e5d9f);const _0x28bb69=document['querySelector'](_0x1c4e('0x4'));const _0x22ac2a=()=>getUrl(_0x1c4e('0xf'));_0x28bb69[_0x1c4e('0x10')](_0x1c4e('0xa'),_0x22ac2a);const _0x2cf634=document[_0x1c4e('0x11')](_0x1c4e('0xb'));const _0x474e93=()=>getLogin();_0x2cf634[_0x1c4e('0x10')](_0x1c4e('0xa'),_0x474e93);};const checkPass=(_0x3f1eb9,_0x5395a7)=>{if(_0x3f1eb9[_0x1c4e('0xc')]()===_0x1c4e('0x0')&&_0x5395a7[_0x1c4e('0xc')]()[_0x1c4e('0xe')](/\s+/g,'')[_0x1c4e('0x2')]()===_0x1c4e('0x9')){getUrl('https://people.rit.edu/ncs2738/Interactive%20Web%20Game/Prototype/SecretWinner/la-verite-est%20-revelee.html');}else{WRONG[_0x1c4e('0xd')]='Error;\x20Invalid\x20User.';}};const getUrl=_0x4716ba=>{window[_0x1c4e('0x3')][_0x1c4e('0xe')](_0x4716ba);};const getLogin=()=>{window[_0x1c4e('0x8')](_0x1c4e('0x7'));};window[_0x1c4e('0x1')]=init;
 
 </script>
 </html>
