@@ -1,14 +1,33 @@
-html, body 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#top {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+#entries
 {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+   margin: auto;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 body
 {
     background-color: rgb(236, 236, 236);
+}
+
+#top h1 {
+  font-size: 2em;
 }
 
 #content {
@@ -20,7 +39,7 @@ body
 select, #textSearch
 {
     font-size: 20px;
-    height: 2vh;
+    height: 3.5vh;
     color:rgb(65, 71, 77);
     background:rgb(252, 252, 252);
     border: 2px black solid;
@@ -39,8 +58,9 @@ select
 }
 
 
-label, h2
+label, h1
 {
+  font-family: 'Kosugi Maru', sans-serif;
     text-align: center;
 }
 
@@ -51,15 +71,10 @@ label, h2
     border-radius: 10px;
     color:rgb(252, 252, 252);
     font-size: 30px;
-    cursor: pointer;
 }
 
-#entries
+#content
 {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  font-family: 'Kosugi Maru', sans-serif;
+    text-align: center; 
 }
